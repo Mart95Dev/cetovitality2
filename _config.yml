@@ -1,0 +1,59 @@
+# Configuration du thème
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Configuration du site
+locale: "fr-FR"
+title: "Mon Blog"
+subtitle: "Sous-titre du blog"
+name: "Votre Nom"
+description: "Description de mon blog"
+url: "https://votre-username.github.io"
+repository: "votre-username/votre-username.github.io"
+
+# Configuration des plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Configuration de l'auteur
+author:
+  name: "Votre Nom"
+  avatar: "/assets/images/bio-photo.jpg" # Ajoutez une photo de profil
+  bio: "Votre biographie courte."
+  location: "Votre Ville"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:votre@email.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/votre-profil"
+
+# Configuration par défaut pour les posts
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+# Inclure les pages
+include: ["_pages"]
+
+# Configuration par défaut pour les pages
+defaults:
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
