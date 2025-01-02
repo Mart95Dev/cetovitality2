@@ -1,184 +1,79 @@
-/* Styles pour la page d'accueil */
-.post-preview {
-  margin-bottom: 2em;
-  display: flex;
-  gap: 2em;
-}
-
-.post-image {
-  flex: 0 0 300px;
-}
-
-.post-image img {
-  width: 100%;
-  height: auto;
-}
-
-.post-info {
-  flex: 1;
-}
-
-.post-meta {
-  margin-bottom: 0.5em;
-}
-
-.post-category {
-  color: #007bff;
-  margin-right: 1em;
-}
-
-/* Styles pour la page d'article */
-.post-header {
-  margin-bottom: 2em;
-}
-
-.post-featured-image {
-  margin-bottom: 2em;
-}
-
-.post-featured-image img {
-  width: 100%;
-  height: auto;
-}
-
-/* Pagination */
-.pagination {
-  text-align: center;
-  margin: 2em 0;
-}
-
-/* Header Styles */
-.site-header {
-  background: #2c3e50;
-  padding: 1rem 0;
-  color: white;
-}
-
-.wrapper {
-  max-width: 1200px;
+/* Style de base */
+body {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
+/* Titre du site */
 .site-title {
-  color: white;
+  margin-bottom: 20px;
+}
+
+.site-title a {
+  color: purple;
   text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 24px;
 }
 
 /* Navigation */
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+.main-nav {
+  margin-bottom: 20px;
 }
 
-.trigger {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.page-link {
-  color: white;
+.main-nav a {
+  color: blue;
   text-decoration: none;
-  &:hover {
-    color: #ddd;
-  }
+  margin-right: 15px;
 }
 
 /* Barre de recherche */
-.search-container {
-  position: relative;
+.search-box {
+  margin-bottom: 20px;
 }
 
-.search-container form {
-  display: flex;
-  align-items: center;
-}
-
-.search-container input {
-  padding: 0.5rem 2.5rem 0.5rem 1rem;
-  border: none;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+.search-box input {
+  padding: 5px;
   width: 200px;
 }
 
-.search-container button {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
+/* Section Follow */
+.follow-section {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
-/* Menu Follow */
-.follow-menu {
-  background: #3498db;
-  padding: 0.5rem 0;
-  text-align: center;
+.follow-section span {
+  margin-right: 10px;
 }
 
-.follow-label {
-  margin-right: 1rem;
-  font-weight: bold;
-}
-
-.social-links {
-  display: inline-flex;
-  gap: 1rem;
-}
-
-.social-link {
-  color: white;
+.follow-section a {
+  margin-right: 10px;
   text-decoration: none;
-  font-size: 1.2rem;
-  
-  &:hover {
-    color: #ddd;
-  }
 }
 
-/* Couleurs spécifiques pour les réseaux sociaux */
-.twitter:hover { color: #1DA1F2; }
-.facebook:hover { color: #4267B2; }
-.github:hover { color: #333; }
-.rss:hover { color: #FFA500; }
-
-/* Styles pour les catégories */
-.category-header {
-  background-color: #f8f9fa;
-  padding: 2rem 0;
-  margin-bottom: 2rem;
-  text-align: center;
+/* Articles */
+.post {
+  margin-bottom: 30px;
 }
 
-.category-description {
-  max-width: 800px;
-  margin: 0 auto;
+.post-meta {
   color: #666;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
-/* Badges de catégories */
-.category-badge {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  margin-right: 0.5rem;
+.post-title {
+  color: blue;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.category-nutrition { background-color: #e9f5db; }
-.category-fitness { background-color: #cfe2ff; }
-.category-bien-etre { background-color: #f8d7da; }
-.category-recettes { background-color: #fff3cd; }
-.category-developpement { background-color: #d1e7dd; }
-.category-biohacking { background-color: #e2e3e5; } 
+.post-excerpt {
+  margin-bottom: 20px;
+} 

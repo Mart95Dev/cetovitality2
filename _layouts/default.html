@@ -1,11 +1,89 @@
 <!DOCTYPE html>
-<html lang="{{ site.locale | default: 'en-US' }}">
-  {% include head.html %}
-  <body>
-    {% include header.html %}
-    <main class="page-content">
-      {{ content }}
-    </main>
-    {% include footer.html %}
-  </body>
+<html lang="{{ site.locale | default: 'fr-FR' }}">
+<head>
+    {% include head.html %}
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-title">
+            <h1>{{ site.title }}</h1>
+            <p>{{ site.subtitle }}</p>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+                <li><a href="{{ '/nutrition/' | relative_url }}">Nutrition</a></li>
+                <li><a href="{{ '/fitness/' | relative_url }}">Fitness</a></li>
+                <li><a href="{{ '/bien-etre/' | relative_url }}">Bien-être</a></li>
+                <li><a href="{{ '/recettes/' | relative_url }}">Recettes</a></li>
+                <li><a href="{{ '/about/' | relative_url }}">À propos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar-left">
+            <div class="widget recent-posts">
+                <h3 class="widget-title">Articles Récents</h3>
+                <ul>
+                    {% for post in site.posts limit:5 %}
+                    <li>
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        <span class="post-date">{{ post.date | date: "%d/%m/%Y" }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="widget categories">
+                <h3 class="widget-title">Catégories</h3>
+                <ul>
+                    {% for category in site.categories %}
+                    <li>
+                        <a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">
+                            {{ category[0] }} ({{ category[1].size }})
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            {{ content }}
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="widget about">
+                <h3 class="widget-title">À Propos</h3>
+                <div class="author-info">
+                    <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="author-avatar">
+                    <p>{{ site.author.bio }}</p>
+                </div>
+            </div>
+
+            <div class="widget social-links">
+                <h3 class="widget-title">Suivez-nous</h3>
+                <div class="social-icons">
+                    {% if site.social_links.twitter %}
+                    <a href="https://twitter.com/{{ site.social_links.twitter }}" target="_blank">Twitter</a>
+                    {% endif %}
+                    {% if site.social_links.facebook %}
+                    <a href="https://facebook.com/{{ site.social_links.facebook }}" target="_blank">Facebook</a>
+                    {% endif %}
+                    {% if site.social_links.github %}
+                    <a href="https://github.com/{{ site.social_links.github }}" target="_blank">GitHub</a>
+                    {% endif %}
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
 </html> 

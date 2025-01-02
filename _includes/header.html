@@ -1,44 +1,22 @@
-<header class="site-header">
-  <div class="wrapper">
-    <!-- Logo -->
-    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+<div class="site-title">
+  <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+</div>
 
-    <!-- Navigation principale -->
-    <nav class="site-nav">
-      <div class="trigger">
-        {% for item in site.data.navigation.main %}
-          <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-        {% endfor %}
-      </div>
+<nav class="main-nav">
+  {% for item in site.data.navigation.main %}
+    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+  {% endfor %}
+</nav>
 
-      <!-- Barre de recherche -->
-      <div class="search-container">
-        <form action="{{ '/search' | relative_url }}" method="get">
-          <input type="text" placeholder="Search" name="q" id="search-input">
-          <button type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
-    </nav>
-  </div>
+<div class="search-box">
+  <input type="text" placeholder="Search">
+  <button type="submit">Q</button>
+</div>
 
-  <!-- Menu Follow -->
-  <div class="follow-menu">
-    <span class="follow-label">FOLLOW:</span>
-    <div class="social-links">
-      <a href="https://twitter.com/votre-compte" class="social-link twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://facebook.com/votre-compte" class="social-link facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://github.com/votre-compte" class="social-link github">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="{{ '/feed.xml' | relative_url }}" class="social-link rss">
-        <i class="fas fa-rss"></i>
-      </a>
-    </div>
-  </div>
-</header> 
+<div class="follow-section">
+  <span>FOLLOW:</span>
+  <a href="https://twitter.com/{{ site.social_links.twitter }}">T</a>
+  <a href="https://facebook.com/{{ site.social_links.facebook }}">F</a>
+  <a href="https://github.com/{{ site.social_links.github }}">G</a>
+  <a href="{{ '/feed.xml' | relative_url }}">R</a>
+</div> 
