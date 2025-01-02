@@ -4,98 +4,43 @@
     {% include head.html %}
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <header class="site-header">
-        <div class="site-title">
-            <h1>Hueman</h1>
-            <p>Inspire and empower.</p>
-        </div>
-        <nav class="main-nav">
-            <div class="nav-container">
-                <ul>
-                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                    <li><a href="{{ '/language/' | relative_url }}">Language</a></li>
-                    <li><a href="{{ '/lifestyle/' | relative_url }}">LifeStyle</a></li>
-                    <li><a href="{{ '/music/' | relative_url }}">Music</a></li>
-                    <li><a href="{{ '/technology/' | relative_url }}">Technology</a></li>
-                    <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="follow-bar">
-            <div class="follow-container">
-                <span class="follow-label">FOLLOW:</span>
-                <div class="social-icons">
-                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" title="RSS"><i class="fas fa-rss"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
-        <aside class="sidebar-left">
-            <div class="widget recent-posts">
-                <h3 class="widget-title">RECENT'S</h3>
-                <ul>
-                    {% for post in site.posts limit:5 %}
-                    <li>
-                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
+        <header class="site-header">
+            <div class="site-title">
+                <h1>{{ site.title }}</h1>
+                {% if site.description %}
+                    <p>{{ site.description }}</p>
+                {% endif %}
             </div>
-
-            <div class="widget categories">
-                <h3 class="widget-title">CATEGORIES</h3>
-                <ul>
-                    {% for category in site.categories %}
-                    <li>
-                        <a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">
-                            {{ category[0] }} ({{ category[1].size }})
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="widget archives">
-                <h3 class="widget-title">ARCHIVES</h3>
-                <ul>
-                    {% assign archive_dates = site.posts | group_by_exp: "post", "post.date | date: '%B %Y'" %}
-                    {% for date in archive_dates %}
-                    <li>
-                        <a href="#">{{ date.name }} ({{ date.items.size }})</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="widget tags">
-                <h3 class="widget-title">TAGS</h3>
-                <div class="tag-cloud">
-                    {% for tag in site.tags %}
-                    <a href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}" class="tag">
-                        {{ tag[0] }} ({{ tag[1].size }})
-                    </a>
-                    {% endfor %}
+            <nav class="main-nav">
+                <div class="nav-container">
+                    <ul>
+                        <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+                        <li><a href="{{ '/nutrition/' | relative_url }}">Nutrition</a></li>
+                        <li><a href="{{ '/fitness/' | relative_url }}">Fitness</a></li>
+                        <li><a href="{{ '/about/' | relative_url }}">À propos</a></li>
+                    </ul>
                 </div>
-            </div>
-        </aside>
+            </nav>
+        </header>
 
         <main class="main-content">
             {{ content }}
         </main>
-    </div>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; {{ site.time | date: '%Y' }} Hueman. All rights reserved.</p>
-        </div>
-    </footer>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html> 
