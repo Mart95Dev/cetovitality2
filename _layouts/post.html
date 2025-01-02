@@ -1,9 +1,36 @@
 ---
 layout: default
 ---
+
 <article class="post">
-  <h1>{{ page.title }}</h1>
+  <header class="post-header">
+    <div class="post-meta">
+      <span class="post-category">{{ page.categories | first | upcase }}</span>
+      <span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span>
+    </div>
+    
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+
+  {% if page.image %}
+    <div class="post-featured-image">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+  {% endif %}
+
   <div class="post-content">
     {{ content }}
+  </div>
+
+  <div class="post-footer">
+    <div class="share">
+      <!-- Boutons de partage -->
+      <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+      <!-- Ajoutez d'autres boutons de partage selon vos besoins -->
+    </div>
+    
+    {% if site.disqus.shortname %}
+      {% include disqus_comments.html %}
+    {% endif %}
   </div>
 </article> 

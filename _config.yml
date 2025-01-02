@@ -4,12 +4,12 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Configuration du site
 locale: "fr-FR"
-title: "Mon Blog"
-subtitle: "Sous-titre du blog"
+title: "Votre Blog Santé"
+subtitle: "Nutrition, Fitness & Bien-être"
 name: "Votre Nom"
-description: "Description de mon blog"
-url: "https://votre-username.github.io"
-repository: "votre-username/votre-username.github.io"
+description: "Guide complet pour une vie saine et équilibrée"
+url: "https://mart95dev.github.io/cetovitality2/"
+repository: "mart95dev/cetovitality2"
 
 # Configuration des plugins
 plugins:
@@ -45,6 +45,8 @@ defaults:
       comments: true
       share: true
       related: true
+      sidebar:
+        nav: "categories"
 
 # Inclure les pages
 include: ["_pages"]
@@ -57,3 +59,72 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+# Configuration de la pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Configuration Disqus (pour les commentaires)
+disqus:
+  shortname: votre-shortname-disqus
+
+# Configuration des images par défaut
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      image: /assets/images/default-post.jpg
+
+# Ajoutez ces lignes à votre configuration
+social_links:
+  twitter: votre-compte-twitter
+  facebook: votre-compte-facebook
+  github: votre-compte-github
+
+# Catégories principales
+category_archive:
+  type: liquid
+  path: /categories/
+
+# Configuration des catégories par défaut
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      sidebar:
+        nav: "categories"
+
+# Navigation latérale des catégories
+categories:
+  - nutrition:
+    - keto
+    - mediterraneen
+    - vegetarien
+  - fitness:
+    - musculation
+    - cardio
+    - yoga
+  - bien-etre:
+    - meditation
+    - sommeil
+    - stress
+  - recettes:
+    - keto
+    - low-carb
+    - vegan
+  - developpement-personnel:
+    - motivation
+    - habitudes
+    - productivite
+  - biohacking:
+    - supplements
+    - technologie
+    - optimisation

@@ -1,0 +1,15 @@
+main:
+  - title: "Accueil"
+    url: /
+  - title: "Nutrition & Régimes"
+    url: /nutrition/
+  - title: "Exercice & Fitness"
+    url: /fitness/
+  - title: "Bien-être & Santé"
+    url: /bien-etre/
+  - title: "Recettes"
+    url: /recettes/
+  - title: "Développement Personnel"
+    url: /developpement-personnel/
+  - title: "Tech & Biohacking"
+    url: /biohacking/ 
